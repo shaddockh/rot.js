@@ -1,6 +1,6 @@
 /*
 	This is rot.js, the ROguelike Toolkit in JavaScript.
-	Version 0.6~dev, generated on Mon Jun 29 16:13:49 CEST 2015.
+	Version 0.6~dev, generated on Thu Jul 16 21:36:18 CDT 2015.
 */
 /**
  * @namespace Top-level ROT namespace
@@ -360,7 +360,7 @@ var ROT = {
  * Contains text tokenization and breaking routines
  */
 ROT.Text = {
-	RE_COLORS: /%([bc]){([^}]*)}/g,
+	RE_COLORS: /%([bc])\\\{([^\\\}]*)\\\}/g,
 
 	/* token types */
 	TYPE_TEXT:		0,
@@ -642,7 +642,7 @@ String.format = function(template) {
 
 		return replaced;
 	}
-	return template.replace(/%(?:([a-z]+)|(?:{([^}]+)}))/gi, replacer);
+	return template.replace(/%(?:([a-z]+)|(?:\\\{([^\\\}]+)\\\}))/gi, replacer);
 }
 
 String.format.map = {

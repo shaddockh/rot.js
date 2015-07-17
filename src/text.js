@@ -3,7 +3,7 @@
  * Contains text tokenization and breaking routines
  */
 ROT.Text = {
-	RE_COLORS: /%([bc]){([^}]*)}/g,
+	RE_COLORS: /%([bc])\\\{([^\\\}]*)\\\}/g,
 
 	/* token types */
 	TYPE_TEXT:		0,

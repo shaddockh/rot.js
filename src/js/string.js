@@ -63,7 +63,7 @@ String.format = function(template) {
 
 		return replaced;
 	}
-	return template.replace(/%(?:([a-z]+)|(?:{([^}]+)}))/gi, replacer);
+	return template.replace(/%(?:([a-z]+)|(?:\\\{([^\\\}]+)\\\}))/gi, replacer);
 }
 
 String.format.map = {
